@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img class="m-auto" alt="Vue logo" src="../assets/logo.png">
-    <Characters msg="Welcome to Your Marvel App in VueJS"/>
+    <h1 class="font-bold text-2xl p-6">This is your Marvel VueJS application</h1>
+    <Characters />
   </div>
 </template>
 
