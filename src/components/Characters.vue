@@ -1,42 +1,27 @@
 <template>
   <div>
-    <h3 v-on:click="getCharacters">{{ msg }}</h3>
     <ul>
-      <li v-for="character in characters" :key="character.name">{{ character.name }}</li>
+      <li v-for="character in characters" :key="character.name">
+        <router-link :to="{name: 'Character', params: {id: character.id } }">{{ character.name }}</router-link>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 import { marvel_secret_key, marvel_public_key} from '../marvel';
+import { mapState } from 'vuex';
 import axios from 'axios';
 
 export default {
   name: 'Characters',
-  data() {
-    return {
-      characters: []
-    }
-  },
-  props: {
-    msg: String
-  },
   mounted() {
-    this.getCharacters();
+    this.$store.dispatch('getCharacters');
   },
-  methods: {
-    getCharacters() {
-      axios.get(`http://gateway.marvel.com/v1/public/characters?apikey=${marvel_public_key}`)
-      .then(res => {
-        res.data.data.results.forEach((item) => {
-          console.log(item);
-          this.characters.push(item);
-        })
-      })
-      .catch(err => {
-        console.log(err);
-      })
-    }
+  computed: {
+    ...mapState({
+      characters: state => state.characters
+    })
   }
 }
 </script>
