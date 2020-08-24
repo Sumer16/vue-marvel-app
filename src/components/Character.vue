@@ -18,7 +18,8 @@
           <p>Last Updated: {{ char.modified }}</p>
         </div>
         <div class="py-3 font-light text-lg font-serif text-gray-700">
-          <p>{{ char.description }}</p>
+          <p v-if="char.description">{{ char.description }}</p>
+          <p v-else>Sorry, No information available</p>
         </div>
       </div>
     </div>
