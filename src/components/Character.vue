@@ -1,16 +1,25 @@
 <template>
   <div>
-    <h3>This is a Marvel Character</h3>
-    <p>{{ this.$route.params.id }}</p>
-    <ul>
-      <li v-for="char in character" :key="char.id">
-        {{ char.name }}
-        {{ char.modified }}
-        {{ char.description }}
-      </li>
-    </ul>
-
-    <img :src="url" alt="" srcset="">
+    <div class="font-bold text-2xl text-gray-800 uppercase">
+      <h3>Marvel Character</h3>
+    </div>
+    <div class="">
+      <p>S.H.I.E.L.D ID: {{ this.$route.params.id }}</p>
+    </div>
+    <div v-for="char in character" :key="char.id">
+      <div>
+        <p>Name: {{ char.name }}</p>
+      </div>
+      <div>
+        <p>Latest Update: {{ char.modified }}</p>
+      </div>
+      <div>
+        <p>Description: {{ char.description }}</p>
+      </div>
+      <div>
+        <img :src="url" alt="" srcset="">
+      </div>
+    </div>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div>
     <h1 class="font-bold text-2xl p-6">This is your Marvel VueJS application</h1>
     <Characters />
   </div>

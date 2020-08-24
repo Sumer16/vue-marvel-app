@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="bg-gray-400 h-screen">
+  <div id="app" class="h-auto w-auto">
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -9,6 +9,9 @@
 </template>
 
 <style>
+*{
+  background-color: #cbd5e0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,7 +21,7 @@
 }
 
 #nav {
-  padding: 30px;
+  padding: 20px 30px;
 }
 
 #nav a {
