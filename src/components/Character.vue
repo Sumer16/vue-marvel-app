@@ -3,21 +3,23 @@
     <div class="font-bold text-2xl text-gray-800 uppercase">
       <h3>Marvel Character</h3>
     </div>
-    <div class="">
+    <div class="font-mono text-lg text-gray-700">
       <p>S.H.I.E.L.D ID: {{ this.$route.params.id }}</p>
     </div>
-    <div v-for="char in character" :key="char.id">
-      <div>
-        <p>Name: {{ char.name }}</p>
-      </div>
-      <div>
-        <p>Latest Update: {{ char.modified }}</p>
-      </div>
-      <div>
-        <p>Description: {{ char.description }}</p>
-      </div>
-      <div>
+    <div v-for="char in character" :key="char.id" class="max-w-2xl m-auto mt-8">
+      <div class="flex flex-col items-center justify-center">
         <img :src="url" alt="" srcset="">
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="pt-3 pb-1 font-semibold text-md text-gray-800">
+          <p>{{ char.name }}</p>
+        </div>
+        <div class="py-1 font-thin text-sm">
+          <p>Last Updated: {{ char.modified }}</p>
+        </div>
+        <div class="py-3 font-light text-lg font-serif text-gray-700">
+          <p>{{ char.description }}</p>
+        </div>
       </div>
     </div>
   </div>
